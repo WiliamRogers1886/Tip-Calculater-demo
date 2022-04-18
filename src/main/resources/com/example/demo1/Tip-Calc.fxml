@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="440.0" prefWidth="326.0" spacing="20.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <HBox prefHeight="26.0" prefWidth="113.0">
+         <children>
+            <Label prefHeight="30.0" prefWidth="68.0" text="Enter Bill:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="baseBill" onKeyTyped="#BaseBillUpdate" prefHeight="30.0" prefWidth="221.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER_RIGHT" prefHeight="140.0" prefWidth="57.0" text="Tip:">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Region prefHeight="105.0" prefWidth="5.0" />
+            <Label fx:id="showTip" prefHeight="153.0" prefWidth="63.0" text="15%">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Region prefHeight="140.0" prefWidth="14.0" />
+            <VBox prefHeight="200.0" prefWidth="150.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#ButtonTip0" prefHeight="35.0" prefWidth="263.0" text="0%">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#ButtonTip15" prefHeight="35.0" prefWidth="263.0" text="15%">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#ButtonTip20" prefHeight="36.0" prefWidth="230.0" text="20%">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onMouseClicked="#ButtonTip25" prefHeight="35.0" prefWidth="297.0" text="25%">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <Label text="Number of people:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label fx:id="displayPeople" alignment="CENTER_RIGHT" contentDisplay="RIGHT" graphicTextGap="12.0" prefHeight="25.0" prefWidth="32.0" text="1" textAlignment="RIGHT">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <Region prefHeight="25.0" prefWidth="10.0" />
+            <Slider fx:id="peopleSlider" majorTickUnit="1.0" max="99.0" min="1.0" minorTickCount="1" onMouseClicked="#PeopleSliderDragged" onMouseDragged="#PeopleSliderDragged" onMouseExited="#PeopleSliderDragged" prefHeight="25.0" prefWidth="245.0" />
+         </children>
+      </HBox>
+      <Label text="Total:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="finalBill" text="0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</VBox>
